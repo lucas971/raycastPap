@@ -12,5 +12,10 @@ bool Sphere::is_hit(Ray3f const & ray) {
 
 Ray3f Sphere::reflect(Ray3f const & ray)
 {
-	return ray;
+	Ray3f reflected = Ray3f(ray);
+}
+
+Vector3f Sphere::impactPosition(Ray3f const & ray)
+{
+	return Vector3f();
 }

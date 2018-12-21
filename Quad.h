@@ -12,6 +12,7 @@ public:
 	Quad(Material const & mat, Vector3f const & origin, Vector3f const & width, Vector3f const & height);
 	bool is_hit(Ray3f const & ray) override;
 	Ray3f reflect(Ray3f const & ray) override;
+	Vector3f impactPosition(Ray3f const & ray) override;
 	
 };
 #endif // !HEADER_QUAD_H

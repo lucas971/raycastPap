@@ -8,6 +8,7 @@ public:
 	Material mat_;
 	virtual bool is_hit(Ray3f const & ray) = 0;
 	virtual Ray3f reflect(Ray3f const & ray) = 0;
+	virtual Vector3f impactPosition(Ray3f const & ray) = 0;
 
 };
 #endif // !HEADER_SHAPE_H

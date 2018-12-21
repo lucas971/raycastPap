@@ -9,5 +9,6 @@ public:
 	double z_;
 	Vector3f();
 	Vector3f(double x, double y, double z);
+	double dist(Vector3f v);
 };
 #endif // !HEADER_VECTOR3F_H

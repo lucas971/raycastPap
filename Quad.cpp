@@ -12,3 +12,8 @@ Ray3f Quad::reflect(Ray3f const & ray)
 {
 	return ray;
 }
+
+Vector3f Quad::impactPosition(Ray3f const & ray)
+{
+	return Vector3f();
+}
