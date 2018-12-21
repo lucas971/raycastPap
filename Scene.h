@@ -9,9 +9,9 @@
 class Scene {
 public:
 	Camera camera_;
-	Shape* shapes_;
+	Shape** shapes_;
 	Ray3f source_;
-	Scene(Camera camera, Shape* shapes_, Ray3f source);
+	Scene(Camera camera, Shape** shapes_, Ray3f source);
 	void render(int width, int height, char* filename);
 };
 

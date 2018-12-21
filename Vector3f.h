@@ -4,10 +4,10 @@
 
 class Vector3f {
 public:
-	float x_;
-	float y_;
-	float z_;
+	double x_;
+	double y_;
+	double z_;
 	Vector3f();
-	Vector3f(int x, int y, int z);
+	Vector3f(double x, double y, double z);
 };
 #endif // !HEADER_VECTOR3F_H

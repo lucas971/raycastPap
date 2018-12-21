@@ -9,6 +9,8 @@ public:
 	Vector3f origin_;
 	float radius_;
 	Sphere(Material const & mat, Vector3f const & origin, float radius);
+	bool is_hit(Ray3f const & ray) override;
+	Ray3f reflect(Ray3f const & ray) override;
 
 };
 #endif // !HEADER_SPHERE_H
