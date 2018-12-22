@@ -10,5 +10,12 @@ public:
 	Vector3f();
 	Vector3f(double x, double y, double z);
 	double dist(Vector3f v);
+	double norm() const;
+	Vector3f normalize() const;
+	Vector3f operator + (Vector3f const & v);
+	Vector3f operator - (Vector3f  const & v);
+	double operator * (Vector3f const & v);
+	Vector3f operator * (double d);
+	
 };
 #endif // !HEADER_VECTOR3F_H
