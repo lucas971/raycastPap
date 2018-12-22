@@ -20,32 +20,32 @@ int main(){
 
 	//TODO: Compléter les vecteurs des constructeurs de qu1, qu2, qu3 qu4, qu5
 
-	//Fond de la boîte
-	Shape* qu1 = new Box(Material(), 
+	//Fond de la boîte (blanc)
+	Shape* qu1 = new Box(Material(255,255,255,0), 
 		Vector3f(mainCamera.position_.x_ - SCENE_WIDTH / 2, mainCamera.position_.y_ - SCENE_HEIGHT / 2, mainCamera.position_.z_ + SCENE_DEPTH), 
 		Vector3f(mainCamera.position_.x_ + SCENE_WIDTH / 2, mainCamera.position_.y_ + SCENE_HEIGHT / 2, mainCamera.position_.z_ + SCENE_DEPTH));
 	shapeList[0] = qu1;
 
-	//Côté droit de la boîte
-	Shape* qu2 = new Box(Material(), 
+	//Côté droit de la boîte (noir)
+	Shape* qu2 = new Box(Material(0, 0, 0, 0),
 		Vector3f(mainCamera.position_.x_ + SCENE_WIDTH / 2, mainCamera.position_.y_ - SCENE_HEIGHT / 2, mainCamera.position_.z_), 
 		Vector3f(mainCamera.position_.x_ + SCENE_WIDTH / 2, mainCamera.position_.y_ + SCENE_HEIGHT / 2, mainCamera.position_.z_ + SCENE_DEPTH));
 	shapeList[1] = qu2;
 
-	//Côté gauche de la boîte
-	Shape* qu3 = new Box(Material(),
+	//Côté gauche de la boîte (noir)
+	Shape* qu3 = new Box(Material(0, 0, 0, 0),
 		Vector3f(mainCamera.position_.x_ - SCENE_WIDTH / 2, mainCamera.position_.y_ - SCENE_HEIGHT / 2, mainCamera.position_.z_),
 		Vector3f(mainCamera.position_.x_ - SCENE_WIDTH / 2, mainCamera.position_.y_ + SCENE_HEIGHT / 2, mainCamera.position_.z_ + SCENE_DEPTH));
 	shapeList[2] = qu3;
 
-	//Haut de la boîte
-	Shape* qu4 = new Box(Material(),
+	//Haut de la boîte (blanc)
+	Shape* qu4 = new Box(Material(255, 255, 255, 0),
 		Vector3f(mainCamera.position_.x_ - SCENE_WIDTH / 2, mainCamera.position_.y_ + SCENE_HEIGHT / 2, mainCamera.position_.z_ ),
 		Vector3f(mainCamera.position_.x_ + SCENE_WIDTH / 2, mainCamera.position_.y_ + SCENE_HEIGHT / 2, mainCamera.position_.z_ + SCENE_DEPTH));
 	shapeList[3] = qu4;
 
-	//Bas de la boîte
-	Shape* qu5 = new Box(Material(),
+	//Bas de la boîte (blanc)
+	Shape* qu5 = new Box(Material(255, 255, 255, 0),
 		Vector3f(mainCamera.position_.x_ - SCENE_WIDTH / 2, mainCamera.position_.y_ - SCENE_HEIGHT / 2, mainCamera.position_.z_),
 		Vector3f(mainCamera.position_.x_ + SCENE_WIDTH / 2, mainCamera.position_.y_ - SCENE_HEIGHT / 2, mainCamera.position_.z_ + SCENE_DEPTH));
 	shapeList[4] = qu5;

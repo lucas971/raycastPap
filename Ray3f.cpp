@@ -11,7 +11,7 @@ Ray3f::Ray3f()
 
 Ray3f::Ray3f(Vector3f const & origin, Vector3f const & direction)
 {
-	origin_ = origin, direction_ = direction;
+	origin_ = origin, direction_ = direction.normalize();
 	invdir_ = Vector3f(1 / direction_.x_, 1 / direction_.y_, 1 / direction_.z_);
 	sign_[0] = (invdir_.x_ < 0);
 	sign_[1] = (invdir_.y_ < 0);

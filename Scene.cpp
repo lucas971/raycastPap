@@ -10,7 +10,7 @@ void Scene::render(int width, int height, const char * filename, Camera mainCame
 {
 	for (int i = 0; i < height; i++){
 		for (int j = 0; j < width; j++) {
-			Ray3f ray = Ray3f(mainCamera.position_, Vector3f(-VIEW_ANGLE_HORIZONTAL / 2 + j * (VIEW_ANGLE_HORIZONTAL / width), -VIEW_ANGLE_VERTICAL / 2 + i * (VIEW_ANGLE_VERTICAL / height), 0));
+			Ray3f ray = Ray3f(mainCamera.position_, mainCamera.direction_ + Vector3f(-VIEW_ANGLE_HORIZONTAL / 2 + j * (VIEW_ANGLE_HORIZONTAL / width), -VIEW_ANGLE_VERTICAL / 2 + i * (VIEW_ANGLE_VERTICAL / height), 0));
 			int hitIndex;
 			double hitDistance = -1;
 			for (int k = 0; k < N_SCENE_OBJECTS; k++) {
@@ -22,11 +22,14 @@ void Scene::render(int width, int height, const char * filename, Camera mainCame
 					}
 				}
 			}
-			
-			
 			Vector3f impactPosition = shapes_[hitIndex]->impactPosition(ray, hitDistance);
 			std::cout << "x = " << impactPosition.x_ << " , y = " << impactPosition.y_ << " , z = " << impactPosition.z_ << " , hitIndex = " << hitIndex << std::endl;
-			//TODO Calculs liés à la source de lumière
+			Material mat = shapes_[hitIndex]->mat_;
+			//TODO : ecriture sur un fichier avec libpng en utilisant la couleur du materiel mat pour le pixel numero j de la ligne numero i de l'écran.
+			
+			
+			//TODO : Calculs liés à la source de lumière
+
 			//TODO ecriture sur un fichier avec libpng
 		}
 	}
