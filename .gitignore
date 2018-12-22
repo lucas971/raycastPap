@@ -2,3 +2,11 @@
 lpng1636/
 
 zlib-1\.2\.11/
+
+Debug/
+
+Raycast\.vcxproj
+
+Raycast\.vcxproj\.filters
+
+Raycast\.vcxproj\.user
