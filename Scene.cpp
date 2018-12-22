@@ -23,10 +23,6 @@ void Scene::render(int width, int height, const char * filename, Camera mainCame
 				}
 			}
 			
-			if (hitDistance < 0) {
-				exit(EXIT_FAILURE);
-			}
-			
 			
 			Vector3f impactPosition = shapes_[hitIndex]->impactPosition(ray, hitDistance);
 			std::cout << "x = " << impactPosition.x_ << " , y = " << impactPosition.y_ << " , z = " << impactPosition.z_ << " , hitIndex = " << hitIndex << std::endl;

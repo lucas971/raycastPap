@@ -6,6 +6,7 @@
 #include "Box.h"
 #include "Sphere.h"
 #include "Constantes.h"
+#include <cstdio>
 
 int main(){
 	//Step 1 : Creation de la camera
@@ -59,5 +60,6 @@ int main(){
 	//Step 4 : Création de la scène
 	Scene mainScene = Scene(mainCamera, shapeList, Ray3f(Vector3f(), Vector3f(0.0, 1.0, 0.0)));
 	mainScene.render(SCREEN_WIDTH, SCREEN_HEIGHT, "newFile", mainCamera);
+	std::getchar();
 	return 0;
 }
