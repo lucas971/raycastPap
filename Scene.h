@@ -10,8 +10,8 @@ class Scene {
 public:
 	Camera camera_;
 	Shape** shapes_;
-	Ray3f source_;
-	Scene(Camera camera, Shape** shapes_, Ray3f source);
+	Vector3f source_;
+	Scene(Camera camera, Shape** shapes_, Vector3f source);
 	void render(int width, int height, const char* filename, Camera mainCamera);
 };
 

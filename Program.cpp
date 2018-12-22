@@ -7,7 +7,7 @@
 #include "Sphere.h"
 #include "Constantes.h"
 #include <cstdio>
-
+#include <iostream>
 int main(){
 	//Step 1 : Creation de la camera
 	Camera mainCamera = Camera(Vector3f(0.0, 0.0, 0.0), Vector3f(0.0, 0.0, 1.0));
@@ -58,8 +58,10 @@ int main(){
 
 
 	//Step 4 : Création de la scène
-	Scene mainScene = Scene(mainCamera, shapeList, Ray3f(Vector3f(), Vector3f(0.0, 1.0, 0.0)));
+	Scene mainScene = Scene(mainCamera, shapeList, Vector3f(0, SCENE_HEIGHT/2 - 0.01, SCENE_DEPTH/2));
 	mainScene.render(SCREEN_WIDTH, SCREEN_HEIGHT, "newFile", mainCamera);
+
+	std::cout << "Program end" << std::endl;
 	std::getchar();
 	return 0;
 }
