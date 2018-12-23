@@ -33,7 +33,13 @@ bool Box::is_hit(Ray3f const & ray, double & hitDistance)  {
 	if (tzmax < tmax)
 		tmax = tzmax;
 	
-	hitDistance = tmin;
+	if (tmin < 0 && tmax < 0)
+		return false;
+	else if (tmin < 0)
+		hitDistance = tmax;
+	else
+		hitDistance = tmin;
+	
 	return true;
 }
 

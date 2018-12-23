@@ -53,12 +53,12 @@ int main(){
 
 
 	//Step 3 : Creation des objets 3D
-
-
+	Shape* sph1 = new Sphere(Material(255, 255, 255, 0), Vector3f(mainCamera.position_.x_, mainCamera.position_.y_, mainCamera.position_.z_ + SCENE_DEPTH / 2), (float).5);
+	shapeList[5] = sph1;
 
 
 	//Step 4 : Création de la scène
-	Scene mainScene = Scene(mainCamera, shapeList, Vector3f(0, SCENE_HEIGHT/2 - 0.01, SCENE_DEPTH/2));
+	Scene mainScene = Scene(mainCamera, shapeList, Vector3f(mainCamera.position_.x_, mainCamera.position_.y_ + SCENE_HEIGHT/2 - 0.1, mainCamera.position_.z_ + SCENE_DEPTH/2));
 	mainScene.render(SCREEN_WIDTH, SCREEN_HEIGHT, "newFile", mainCamera);
 
 	std::cout << "Program end" << std::endl;
