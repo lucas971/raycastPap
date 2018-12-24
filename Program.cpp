@@ -53,7 +53,7 @@ int main(){
 
 
 	//Step 3 : Creation des objets 3D
-	Shape* sph1 = new Sphere(Material(255, 255, 255, 0), Vector3f(mainCamera.position_.x_, mainCamera.position_.y_, mainCamera.position_.z_ + SCENE_DEPTH / 2), (float).5);
+	Shape* sph1 = new Sphere(Material(255, 255, 255, 0), Vector3f(mainCamera.position_.x_, mainCamera.position_.y_, mainCamera.position_.z_ + SCENE_DEPTH / 2), (float).1);
 	shapeList[5] = sph1;
 
 
