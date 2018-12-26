@@ -7,7 +7,7 @@ class Shape {
 public:
 	Material mat_;
 	virtual bool is_hit(Ray3f const & ray, double & hitDistance) = 0;
-	virtual Ray3f reflect(Ray3f const & ray) = 0;
+	virtual Ray3f reflect(Ray3f const & ray, Vector3f const & hitPosition) = 0;
 	virtual Vector3f impactPosition(Ray3f const & ray, double hitDistance) = 0;
 
 };

@@ -10,7 +10,7 @@ public:
 	float radius_;
 	Sphere(Material const & mat, Vector3f const & origin, float radius);
 	bool is_hit(Ray3f const & ray, double & hitDistance) override;
-	Ray3f reflect(Ray3f const & ray) override;
+	Ray3f reflect(Ray3f const & ray, Vector3f const & hitPosition) override;
 	Vector3f impactPosition(Ray3f const & ray, double hitDistance) override;
 
 };

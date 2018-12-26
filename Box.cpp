@@ -33,9 +33,9 @@ bool Box::is_hit(Ray3f const & ray, double & hitDistance)  {
 	if (tzmax < tmax)
 		tmax = tzmax;
 	
-	if (tmin < 0 && tmax < 0)
+	if (tmin <= 0 && tmax <= 0)
 		return false;
-	else if (tmin < 0)
+	else if (tmin <= 0)
 		hitDistance = tmax;
 	else
 		hitDistance = tmin;
@@ -43,9 +43,9 @@ bool Box::is_hit(Ray3f const & ray, double & hitDistance)  {
 	return true;
 }
 
-Ray3f Box::reflect(Ray3f const & ray)
-{
-	return ray;
+Ray3f Box::reflect(Ray3f const & ray, Vector3f const & impactPosition)
+{//TODO : implement
+	return Ray3f();
 }
 
 Vector3f Box::impactPosition(Ray3f const & ray, double hitDistance)
