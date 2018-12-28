@@ -51,6 +51,9 @@ void Scene::render(int width, int height, const char * filename, Camera mainCame
 				b += mat.b_ * (1 - mat.shininess_);
 				s = mat.shininess_;
 			}
+			r = r / n;
+			g = g / n;
+			b = b / n;
 			//TODO : Calculs liés à la source de lumière
 			
 			
