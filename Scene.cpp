@@ -2,6 +2,7 @@
 #include "Constantes.h"
 #include <iostream>
 #include <png.h>
+#include <zlib.h>
 
 
 Scene::Scene(Camera camera, Shape ** shapes, Vector3f source)
@@ -18,13 +19,15 @@ void Scene::render(int width, int height, const char * filename, Camera mainCame
 
 	/* Partie 4.1 de la doc : Setup*/
 
-	FILE *fp = fopen(filename, "wb");
-	if (!fp) {
-		std::cout << "ERROR file open" << std::endl;
-	}
 	png_structp png_ptr = NULL;
 	png_infop info_ptr = NULL;
 	png_byte** row_pointers;
+
+	FILE *fp = fopen(filename, "wb");
+	if (!fp) {
+		std::cout << "ERROR file open" << std::endl;
+
+	}
 
 	row_pointers = (png_bytepp)malloc(height * sizeof(png_bytep));
 	
@@ -50,8 +53,9 @@ void Scene::render(int width, int height, const char * filename, Camera mainCame
 		return;
 	}
 
-	/*Cette partie du code doit être mise plus bas après le png_set_IHDR*/
-	/*png_init_io(png_ptr, fp);*/
+	png_init_io(png_ptr, fp);
+
+
 
 	/*Partie 4.2 de la doc -> pas faite car pas besoin*/
 
@@ -145,7 +149,6 @@ void Scene::render(int width, int height, const char * filename, Camera mainCame
 		}
 	}
 	
-	png_init_io(png_ptr, fp);
 	png_write_image(png_ptr, row_pointers);
 	png_write_end(png_ptr, info_ptr);
 	png_destroy_write_struct(&png_ptr, &info_ptr);
