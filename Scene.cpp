@@ -67,7 +67,7 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 			int hitIndex = -1;
 			double reflected = 0;
 			Ray3f ray;
-			double hitDistance = -1;
+			double hitDistance;
 			Material mat;
 			int lightHitIndex;
 
@@ -81,6 +81,7 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 			
 				n++;
 
+				hitDistance = -1;
 				for (int k = 0; k < N_SCENE_OBJECTS; k++) {
 					double tmpHitDistance;
 					if (k != hitIndex) {
