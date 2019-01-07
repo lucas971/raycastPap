@@ -105,7 +105,7 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 			//TODO : Calculs liés à la source de lumière
 			
 			
-			/*
+			
 			Ray3f lightRay = Ray3f(source_, (impactPosition - source_).normalize());
 			hitDistance = -1;
 
@@ -128,7 +128,7 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 				lightStrenght = .5 + 5 / hitDistance;
 			else
 				lightStrenght = 1;
-			*/
+			
 			//TODO : ecriture sur un fichier avec libpng en utilisant la couleur du materiel mat pour le pixel numero j de la ligne numero i de l'écran.
 			row[j * 3] = r;
 			row[j * 3 + 1] = g;

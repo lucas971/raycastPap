@@ -1,0 +1,24 @@
+﻿  Box.cpp
+  Camera.cpp
+c:\users\lucas\desktop\programmation\raycastpap\raycast\raycast\camera.cpp(5): warning C4930: 'Vector3f position_(void)' : fonction prototypée non appelée (était-ce la définition de variable souhaitée ?)
+c:\users\lucas\desktop\programmation\raycastpap\raycast\raycast\camera.cpp(5): warning C4930: 'Vector3f direction_(void)' : fonction prototypée non appelée (était-ce la définition de variable souhaitée ?)
+  Material.cpp
+  Program.cpp
+  Ray3f.cpp
+  Scene.cpp
+c:\users\lucas\desktop\programmation\raycastpap\raycast\raycast\scene.cpp(133): warning C4244: '=' : conversion de 'double' en 'png_byte', perte possible de données
+c:\users\lucas\desktop\programmation\raycastpap\raycast\raycast\scene.cpp(134): warning C4244: '=' : conversion de 'double' en 'png_byte', perte possible de données
+c:\users\lucas\desktop\programmation\raycastpap\raycast\raycast\scene.cpp(135): warning C4244: '=' : conversion de 'double' en 'png_byte', perte possible de données
+c:\users\lucas\desktop\programmation\raycastpap\raycast\raycast\scene.cpp(73): warning C4101: 'lightHitIndex' : variable locale non référencée
+  Sphere.cpp
+  Vector3f.cpp
+Scene.obj : error LNK2001: symbole externe non résolu _png_set_text
+Scene.obj : error LNK2001: symbole externe non résolu _png_malloc
+Scene.obj : error LNK2001: symbole externe non résolu _png_create_write_struct
+Scene.obj : error LNK2001: symbole externe non résolu _png_write_info
+Scene.obj : error LNK2001: symbole externe non résolu _png_init_io
+Scene.obj : error LNK2001: symbole externe non résolu _png_write_row
+Scene.obj : error LNK2001: symbole externe non résolu _png_set_IHDR
+Scene.obj : error LNK2001: symbole externe non résolu _png_create_info_struct
+Scene.obj : error LNK2001: symbole externe non résolu _png_write_end
+C:\Users\lucas\Desktop\Programmation\raycastPap\Raycast\Release\Raycast.exe : fatal error LNK1120: 9 externes non résolus

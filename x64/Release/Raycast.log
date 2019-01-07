@@ -1,0 +1,11 @@
+﻿  Box.cpp
+  Camera.cpp
+c:\users\lucas\desktop\programmation\raycastpap\raycast\raycast\camera.cpp(5): warning C4930: 'Vector3f position_(void)' : fonction prototypée non appelée (était-ce la définition de variable souhaitée ?)
+c:\users\lucas\desktop\programmation\raycastpap\raycast\raycast\camera.cpp(5): warning C4930: 'Vector3f direction_(void)' : fonction prototypée non appelée (était-ce la définition de variable souhaitée ?)
+  Material.cpp
+  Program.cpp
+  Ray3f.cpp
+  Scene.cpp
+c:\users\lucas\desktop\programmation\raycastpap\raycast\raycast\scene.cpp(6): fatal error C1083: Impossible d'ouvrir le fichier include : 'png.h' : No such file or directory
+  Sphere.cpp
+  Vector3f.cpp
