@@ -45,7 +45,7 @@ int main(){
 	shapeList[3] = qu4;
 
 	//Bas de la boîte (blanc)
-	Shape* qu5 = new Box(Material(255, 255, 255, 0),
+	Shape* qu5 = new Box(Material(150, 0, 150, 0),
 		Vector3f(mainCamera.position_.x_ - SCENE_WIDTH / 2, mainCamera.position_.y_ - SCENE_HEIGHT / 2, mainCamera.position_.z_),
 		Vector3f(mainCamera.position_.x_ + SCENE_WIDTH / 2, mainCamera.position_.y_ - SCENE_HEIGHT / 2, mainCamera.position_.z_ + SCENE_DEPTH));
 	shapeList[4] = qu5;

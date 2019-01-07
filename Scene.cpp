@@ -1,8 +1,10 @@
+#define _CRT_SECURE_NO_DEPRECATE
 #include "Scene.h"
 #include "Constantes.h"
+#include "include/png.h"
+#include "include/zlib.h"
+#include <cstdio>
 #include <iostream>
-#include <png.h>
-#include <zlib.h>
 
 Scene::Scene(Camera camera, Shape ** shapes, Vector3f source)
 {
