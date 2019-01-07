@@ -8,8 +8,8 @@ const int SCREEN_WIDTH = 1280; //Résolution horizontale
 const int SCREEN_HEIGHT = 720; //Résolution verticale
 const double ANGLE_STEP_HORIZONTAL = VIEW_ANGLE_HORIZONTAL / SCREEN_WIDTH;
 const double ANGLE_STEP_VERTICAL = VIEW_ANGLE_VERTICAL / SCREEN_WIDTH;
-const int N_SCENE_OBJECTS = 6; //Doit correspondre au nombre exact de "Shape" dans la scène.
-const double SCENE_DEPTH = 5; //Profondeur de la scène
-const double SCENE_HEIGHT = 20; //Hauteur de la scène
-const double SCENE_WIDTH = 20; //Largeur de la scène
+const int N_SCENE_OBJECTS = 7; //Doit correspondre au nombre exact de "Shape" dans la scène.
+const double SCENE_DEPTH = 1; //Profondeur de la scène
+const double SCENE_HEIGHT = 1; //Hauteur de la scène
+const double SCENE_WIDTH = 1; //Largeur de la scène
 #endif // !HEADER_CONSTANTES_H

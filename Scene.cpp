@@ -13,8 +13,6 @@ Scene::Scene(Camera camera, Shape ** shapes, Vector3f source)
 
 void Scene::render(int width, int height, char * filename, Camera mainCamera)
 {
-	int hit[6];
-	hit[0] = 0, hit[1] = 0, hit[2] = 0, hit[3] = 0, hit[4] = 0, hit[5] = 0;
 
 	FILE *fp = fopen(filename, "wb");
 	if (!fp) {
@@ -89,7 +87,6 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 						}
 					}
 				}
-				hit[hitIndex] ++;
 				impactPosition = shapes_[hitIndex]->impactPosition(ray, hitDistance);
 
 				mat = shapes_[hitIndex]->mat_;
@@ -105,7 +102,7 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 			//TODO : Calculs liés à la source de lumière
 			
 			
-			
+			lightHitIndex = hitIndex;
 			Ray3f lightRay = Ray3f(source_, (impactPosition - source_).normalize());
 			hitDistance = -1;
 
@@ -129,6 +126,7 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 			else
 				lightStrenght = 1;
 			
+			
 			//TODO : ecriture sur un fichier avec libpng en utilisant la couleur du materiel mat pour le pixel numero j de la ligne numero i de l'écran.
 			row[j * 3] = r * lightStrenght;
 			row[j * 3 + 1] = g * lightStrenght;
@@ -139,8 +137,4 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 	}
 	
 	png_write_end(png_ptr, NULL);
-
-	for (int i = 0; i < N_SCENE_OBJECTS; i++) { //FOR STATISTIC PURPOSES
-		std::cout << "N°" << i << " object touch % : " << (double)hit[i] / (double)(width*height) << std::endl;
-	}
 }

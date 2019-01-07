@@ -21,8 +21,8 @@ bool Sphere::is_hit(Ray3f const & ray, double & hitDistance) {
 Ray3f Sphere::reflect(Ray3f const & ray, Vector3f const & impactPosition)
 {
 	Vector3f normal = (origin_ - impactPosition).normalize();
-
-	return Ray3f(impactPosition, ( normal * (normal * ray.direction_) * (double)-2) + ray.direction_ );
+	Vector3f rayDir = ((normal * (normal * ray.direction_) * (double)-2) + ray.direction_).normalize();
+	return Ray3f(impactPosition, rayDir);
 }
 
 //Appeller is_hit() avant pour vérifier que l'objet est bien touché
