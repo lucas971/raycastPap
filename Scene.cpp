@@ -64,7 +64,8 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 			double n = 0;
 			double s = 0;
 			Vector3f impactPosition;
-			int hitIndex;
+			int hitIndex = -1;
+			double reflected = 0;
 			Ray3f ray;
 			double hitDistance = -1;
 			Material mat;
@@ -73,20 +74,28 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 			while (n==0 || s!=0){
 				if (n == 0)
 					ray = Ray3f(mainCamera.position_, (mainCamera.direction_ + Vector3f(-VIEW_ANGLE_HORIZONTAL / 2 + j * (VIEW_ANGLE_HORIZONTAL / width), +VIEW_ANGLE_VERTICAL / 2 - i * (VIEW_ANGLE_VERTICAL / height), 0)).normalize());
-				else 
+				else {
 					ray = shapes_[hitIndex]->reflect(ray, impactPosition);
+					reflected++;
+				}
 			
 				n++;
 
 				for (int k = 0; k < N_SCENE_OBJECTS; k++) {
 					double tmpHitDistance;
-					if (shapes_[k]->is_hit(ray, tmpHitDistance)) {
-						if (hitDistance < 0 || hitDistance > tmpHitDistance) {
-							hitIndex = k;
-							hitDistance = tmpHitDistance;
+					if (k != hitIndex) {
+						if (shapes_[k]->is_hit(ray, tmpHitDistance)) {
+							if (k == 7) {
+								std::cout << "ça a touche le mur derriere la camera" << std::endl;
+							}
+							if (hitDistance < 0 || hitDistance > tmpHitDistance) {
+								hitIndex = k;
+								hitDistance = tmpHitDistance;
+							}
 						}
 					}
 				}
+
 				impactPosition = shapes_[hitIndex]->impactPosition(ray, hitDistance);
 
 				mat = shapes_[hitIndex]->mat_;

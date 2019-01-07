@@ -12,7 +12,8 @@ int main(){
 	//Step 1 : Creation de la camera
 	Camera mainCamera = Camera(Vector3f(0.0, 0.0, 0.0), Vector3f(0.0, 0.0, 1.0));
 
-
+	//Step 1.5 : Creation d'un mur artificiel derriere la camera pour les rayons reflechis
+	
 
 	//Step 2 : Création des quadrilatères qui représentent la scène
 
@@ -50,10 +51,14 @@ int main(){
 		Vector3f(mainCamera.position_.x_ + SCENE_WIDTH / 2, mainCamera.position_.y_ - SCENE_HEIGHT / 2, mainCamera.position_.z_ + SCENE_DEPTH));
 	shapeList[4] = qu5;
 
-
+	//Step 1.5 : Creation d'un mur artificiel derriere la camera pour les rayons reflechis
+	Shape* qu6 = new Box(Material(255, 255, 255, 0),
+		Vector3f(mainCamera.position_.x_ - SCENE_WIDTH -100, mainCamera.position_.y_ - SCENE_HEIGHT -100, mainCamera.position_.z_ - .2),
+		Vector3f(mainCamera.position_.x_ + SCENE_WIDTH +100, mainCamera.position_.y_ + SCENE_HEIGHT +100, mainCamera.position_.z_ - .7));
+	shapeList[7] = qu6;
 
 	//Step 3 : Creation des objets 3D
-	Shape* sph1 = new Sphere(Material(200, 0, 0, 0), 
+	Shape* sph1 = new Sphere(Material(200, 0, 0, 0.5), 
 		Vector3f(mainCamera.position_.x_ + .2, mainCamera.position_.y_, mainCamera.position_.z_ + .5),
 		(float).1);
 	shapeList[5] = sph1;
