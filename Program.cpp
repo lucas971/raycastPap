@@ -59,7 +59,7 @@ int main(){
 
 	//Step 4 : Création de la scène
 	Scene mainScene = Scene(mainCamera, shapeList, Vector3f(mainCamera.position_.x_, mainCamera.position_.y_ + SCENE_HEIGHT/2 - 0.1, mainCamera.position_.z_ + SCENE_DEPTH/2));
-	char* newFile = (char*) "newFile";
+	char* newFile = (char*) "newFile.png";
 	mainScene.render(SCREEN_WIDTH, SCREEN_HEIGHT, newFile, mainCamera);
 
 	std::cout << "Program end" << std::endl;

@@ -72,7 +72,7 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 
 			while (n==0 || s!=0){
 				if (n == 0)
-					ray = Ray3f(mainCamera.position_, (mainCamera.direction_ + Vector3f(-VIEW_ANGLE_HORIZONTAL / 2 + j * (VIEW_ANGLE_HORIZONTAL / width), -VIEW_ANGLE_VERTICAL / 2 + i * (VIEW_ANGLE_VERTICAL / height), 0)).normalize());
+					ray = Ray3f(mainCamera.position_, (mainCamera.direction_ + Vector3f(-VIEW_ANGLE_HORIZONTAL / 2 + j * (VIEW_ANGLE_HORIZONTAL / width), +VIEW_ANGLE_VERTICAL / 2 - i * (VIEW_ANGLE_VERTICAL / height), 0)).normalize());
 				else 
 					ray = shapes_[hitIndex]->reflect(ray, impactPosition);
 			
