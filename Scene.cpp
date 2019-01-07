@@ -130,9 +130,9 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 				lightStrenght = 1;
 			
 			//TODO : ecriture sur un fichier avec libpng en utilisant la couleur du materiel mat pour le pixel numero j de la ligne numero i de l'écran.
-			row[j * 3] = r;
-			row[j * 3 + 1] = g;
-			row[j * 3 + 2] = b;
+			row[j * 3] = r * lightStrenght;
+			row[j * 3 + 1] = g * lightStrenght;
+			row[j * 3 + 2] = b * lightStrenght;
 		}
 
 		png_write_row(png_ptr, row);
