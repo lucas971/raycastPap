@@ -86,9 +86,6 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 					double tmpHitDistance;
 					if (k != hitIndex) {
 						if (shapes_[k]->is_hit(ray, tmpHitDistance)) {
-							if (k == 7) {
-								std::cout << "ça a touche le mur derriere la camera" << std::endl;
-							}
 							if (hitDistance < 0 || hitDistance > tmpHitDistance) {
 								hitIndex = k;
 								hitDistance = tmpHitDistance;

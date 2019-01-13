@@ -58,19 +58,19 @@ int main(){
 	shapeList[7] = qu6;
 
 	//Step 3 : Creation des objets 3D
-	Shape* sph1 = new Sphere(Material(200, 0, 0, 0.5), 
-		Vector3f(mainCamera.position_.x_ + .2, mainCamera.position_.y_, mainCamera.position_.z_ + .5),
-		(float).1);
+	Shape* sph1 = new Sphere(Material(200, 0, 0, 0), 
+		Vector3f(mainCamera.position_.x_ + .2, mainCamera.position_.y_, mainCamera.position_.z_ + 0.4),
+		(float).2);
 	shapeList[5] = sph1;
 
 	Shape* box1 = new Box(Material(200, 0, 0, 0),
-		Vector3f(mainCamera.position_.x_ -.3, mainCamera.position_.y_- .1, mainCamera.position_.z_ + .4),
-		Vector3f(mainCamera.position_.x_ -.2, mainCamera.position_.y_ + .1, mainCamera.position_.z_ + .5));
+		Vector3f(mainCamera.position_.x_ -.3, mainCamera.position_.y_- .1, mainCamera.position_.z_ + 0.3),
+		Vector3f(mainCamera.position_.x_ -.1, mainCamera.position_.y_ + .1, mainCamera.position_.z_ + 0.8));
 	shapeList[6] = box1;
 
 
 	//Step 4 : Création de la scène
-	Scene mainScene = Scene(mainCamera, shapeList, Vector3f(mainCamera.position_.x_, mainCamera.position_.y_ + SCENE_HEIGHT/2 - .001, mainCamera.position_.z_ + .5));
+	Scene mainScene = Scene(mainCamera, shapeList, Vector3f(mainCamera.position_.x_, mainCamera.position_.y_ + SCENE_HEIGHT/2 - .001, mainCamera.position_.z_ + .1));
 	char* newFile = (char*) "newFile.png";
 	mainScene.render(SCREEN_WIDTH, SCREEN_HEIGHT, newFile, mainCamera);
 
