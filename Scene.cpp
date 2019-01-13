@@ -126,7 +126,7 @@ void Scene::render(int width, int height, char * filename, Camera mainCamera)
 			
 			double lightStrenght;
 			if (lightHitIndex != hitIndex) {
-				lightStrenght = 0;
+				lightStrenght = 0.5 * hitDistance;
 			}
 			else if (hitDistance > 10)
 				lightStrenght = .5 + 5 / hitDistance;

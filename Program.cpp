@@ -59,13 +59,13 @@ int main(){
 
 	//Step 3 : Creation des objets 3D
 	Shape* sph1 = new Sphere(Material(200, 0, 0, 0.3), 
-		Vector3f(mainCamera.position_.x_ + 0.3, mainCamera.position_.y_, mainCamera.position_.z_ + 0.5),
+		Vector3f(mainCamera.position_.x_ + 0.2, mainCamera.position_.y_, mainCamera.position_.z_ + 0.5),
 		(float).3);
 	shapeList[5] = sph1;
 
 	Shape* box1 = new Box(Material(200, 0, 0, 0),
-		Vector3f(mainCamera.position_.x_ -.4, mainCamera.position_.y_ - .1, mainCamera.position_.z_ + 0.1),
-		Vector3f(mainCamera.position_.x_ -.2, mainCamera.position_.y_ + .1, mainCamera.position_.z_ + 0.2));
+		Vector3f(mainCamera.position_.x_ -.5, mainCamera.position_.y_ - .1, mainCamera.position_.z_ + 0.1),
+		Vector3f(mainCamera.position_.x_ -.3, mainCamera.position_.y_ + .1, mainCamera.position_.z_ + 0.2));
 	shapeList[6] = box1;
 
 
